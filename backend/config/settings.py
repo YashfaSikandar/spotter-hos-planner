@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-*($pd73+f$-v%zata4)!plw138+4$jz11wgern%2om0rbhl4cc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['spotter-hos-planner-production.up.railway.app',
+    'localhost',
+    '127.0.0.1',]
 
 
 # Application definition
