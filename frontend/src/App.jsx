@@ -96,7 +96,7 @@ function App() {
     setActiveView("planner");
 
     try {
-      const response = await fetch("/api/plan-trip/", {
+      const response = await fetch("https://spotter-hos-planner-production.up.railway.app/api/plan-trip/", {
         method: "POST",
 
         headers: {
