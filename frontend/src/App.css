@@ -1980,32 +1980,35 @@
 }
 
 /* =========================================================
-   SPOTTER VISUAL REDESIGN — STEP 1
-   Safe override layer
+   SPOTTER THEME
    ========================================================= */
 
 :root {
-  --spotter-navy: #101820;
-  --spotter-navy-light: #18232d;
-  --spotter-coral: #ff6b5f;
-  --spotter-coral-dark: #e95a50;
-  --spotter-teal: #00a6a6;
-  --spotter-blue: #5b8def;
+  --spotter-navy: #081b30;
+  --spotter-navy-light: #102a43;
 
-  --spotter-bg: #f7f9fb;
+  --spotter-blue: #4f8fbe;
+  --spotter-blue-dark: #2f6f9f;
+  --spotter-blue-light: #8fbfd8;
+
+  --spotter-teal: #4fa9aa;
+  --spotter-ice: #c7e2e8;
+
+  --spotter-bg: #f5f8fb;
   --spotter-card: #ffffff;
 
-  --spotter-text: #17212a;
-  --spotter-text-secondary: #64717d;
-  --spotter-text-muted: #8b97a2;
+  --spotter-text: #16324b;
+  --spotter-text-blue: #285f8d;
+  --spotter-text-secondary: #607b91;
+  --spotter-text-muted: #879bad;
 
-  --spotter-border: #e3e8ed;
+  --spotter-border: #dce6ed;
 
   --spotter-shadow:
-    0 4px 18px rgba(16, 24, 32, 0.05);
+    0 5px 22px rgba(18, 55, 82, 0.055);
 
   --spotter-shadow-hover:
-    0 10px 28px rgba(16, 24, 32, 0.09);
+    0 10px 30px rgba(18, 55, 82, 0.10);
 }
 
 
@@ -2014,7 +2017,19 @@
    ========================================================= */
 
 .app {
-  background: var(--spotter-bg);
+  background:
+    radial-gradient(
+      circle at 88% 5%,
+      rgba(143, 191, 216, 0.13),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 15% 92%,
+      rgba(79, 169, 170, 0.07),
+      transparent 28%
+    ),
+    var(--spotter-bg);
+
   color: var(--spotter-text);
 }
 
@@ -2025,30 +2040,59 @@
 
 .sidebar {
   width: 250px;
-  background: var(--spotter-navy);
+
+  background:
+    linear-gradient(
+      180deg,
+      #07192c 0%,
+      #0a1e33 52%,
+      #10283f 100%
+    );
+
   color: #ffffff;
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 
-/* Brand */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
 .brand {
   color: #ffffff;
 }
 
 .brand-mark {
-  background: var(--spotter-coral);
-  color: #ffffff;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-radius: 10px;
+
+  background: transparent;
+}
+
+.brand-mark img {
+  width: 36px;
+  height: 36px;
+
+  display: block;
+  object-fit: contain;
 }
 
 
-/* Navigation */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .nav-item {
-  color: #98a5b1;
+  color: #91aabd;
   border-radius: 10px;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -2056,35 +2100,54 @@
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(79, 143, 190, 0.14),
+      rgba(79, 169, 170, 0.07)
+    );
+
+  color: #e7f3f8;
   transform: translateX(2px);
 }
 
 .nav-item.active {
-  background: rgba(255, 107, 95, 0.14);
+  background:
+    linear-gradient(
+      100deg,
+      rgba(79, 143, 190, 0.28),
+      rgba(79, 169, 170, 0.15)
+    );
+
   color: #ffffff;
+
+  box-shadow:
+    inset 3px 0 0 #75b4d3,
+    0 4px 15px rgba(4, 24, 42, 0.18);
 }
 
 .nav-item.active span {
-  color: var(--spotter-coral);
+  color: #9dd0e5;
 }
 
 
-/* Driver card */
+/* =========================================================
+   DRIVER CARD
+   ========================================================= */
 
 .driver-card {
   border-top-color: rgba(255, 255, 255, 0.09);
 }
 
 .avatar {
-  background: #e9eef2;
+  background: #dcecf2;
   color: var(--spotter-navy);
 }
 
 .online-dot {
-  background: #39c979;
-  box-shadow: 0 0 0 3px rgba(57, 201, 121, 0.12);
+  background: #49bfa7;
+  box-shadow:
+    0 0 0 3px rgba(73, 191, 167, 0.13);
 }
 
 
@@ -2093,18 +2156,20 @@
    ========================================================= */
 
 .main-content {
-  background: var(--spotter-bg);
+  background: transparent;
 }
 
 
-/* Topbar */
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .topbar {
   border-bottom-color: var(--spotter-border);
 }
 
 .eyebrow {
-  color: var(--spotter-text-muted);
+  color: #66849b;
 }
 
 .topbar h1 {
@@ -2113,14 +2178,17 @@
 
 .status-pill {
   border-color: var(--spotter-border);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   color: var(--spotter-text-secondary);
-  box-shadow: 0 2px 8px rgba(16, 24, 32, 0.03);
+
+  box-shadow:
+    0 2px 9px rgba(18, 55, 82, 0.04);
 }
 
 .status-pill span {
-  background: #39c979;
-  box-shadow: 0 0 0 3px rgba(57, 201, 121, 0.12);
+  background: #49bfa7;
+  box-shadow:
+    0 0 0 3px rgba(73, 191, 167, 0.12);
 }
 
 
@@ -2128,8 +2196,23 @@
    WELCOME
    ========================================================= */
 
+.welcome-section {
+  position: relative;
+  overflow: hidden;
+}
+
 .welcome-section h2 {
-  color: var(--spotter-text);
+  background:
+    linear-gradient(
+      100deg,
+      #163b5c 0%,
+      #286b99 55%,
+      #438f96 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .welcome-section p {
@@ -2137,25 +2220,109 @@
 }
 
 
+/* Subtle decorative sparkle */
+
+.welcome-section::before {
+  content: "✦";
+
+  position: absolute;
+  top: 20px;
+  right: 9%;
+
+  color: rgba(79, 143, 190, 0.24);
+  font-size: 17px;
+
+  animation: spotterSparkle 3.5s ease-in-out infinite;
+}
+
+.welcome-section::after {
+  content: "✧";
+
+  position: absolute;
+  top: 70px;
+  right: 4%;
+
+  color: rgba(79, 169, 170, 0.25);
+  font-size: 12px;
+
+  animation:
+    spotterSparkle 4.5s ease-in-out infinite reverse;
+}
+
+@keyframes spotterSparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.9) rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.15) rotate(12deg);
+  }
+}
+
+
 /* =========================================================
-   PLANNER
+   CARDS
    ========================================================= */
 
-.planner-card {
+.planner-card,
+.route-section,
+.hos-summary-card,
+.timeline-card,
+.empty-state,
+.eld-empty {
   border-color: var(--spotter-border);
   background: var(--spotter-card);
+
   box-shadow: var(--spotter-shadow);
+
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
-.planner-card:hover {
+.planner-card:hover,
+.route-section:hover {
   box-shadow: var(--spotter-shadow-hover);
 }
 
+
+/* Elegant blue/teal line */
+
+.planner-card::before,
+.route-section::before,
+.hos-summary-card::before,
+.timeline-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(79, 143, 190, 0.55),
+      rgba(79, 169, 170, 0.4),
+      transparent
+    );
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
 .card-header {
-  border-bottom-color: #edf0f3;
+  border-bottom-color: #e8eef2;
 }
 
 .card-header h3 {
@@ -2167,21 +2334,32 @@
 }
 
 
-/* Step indicator */
+/* =========================================================
+   STEP INDICATOR
+   ========================================================= */
 
 .step-indicator > span:not(.step-line) {
-  border-color: #d9e0e5;
-  color: #9aa5ae;
+  border-color: #d5e1e8;
+  color: #91a5b5;
 }
 
 .step-indicator .step-active {
-  background: var(--spotter-coral);
-  border-color: var(--spotter-coral);
+  background:
+    linear-gradient(
+      135deg,
+      var(--spotter-blue),
+      var(--spotter-teal)
+    );
+
+  border-color: transparent;
   color: #ffffff !important;
+
+  box-shadow:
+    0 4px 11px rgba(79, 143, 190, 0.22);
 }
 
 .step-line {
-  background: #dce2e6;
+  background: #d8e3e9;
 }
 
 
@@ -2190,33 +2368,35 @@
    ========================================================= */
 
 .input-group label {
-  color: #46535e;
+  color: #31516b;
 }
 
 .input-wrapper input {
-  border-color: #d9e1e7;
-  background: #fbfcfd;
+  border-color: #d5e1e8;
+  background: #fbfdff;
   color: var(--spotter-text);
+
   border-radius: 9px;
 }
 
 .input-wrapper input:hover {
-  border-color: #c5cfd7;
+  border-color: #b9ccd8;
 }
 
 .input-wrapper input:focus {
-  border-color: var(--spotter-coral);
+  border-color: var(--spotter-blue);
   background: #ffffff;
+
   box-shadow:
-    0 0 0 3px rgba(255, 107, 95, 0.10);
+    0 0 0 3px rgba(79, 143, 190, 0.11);
 }
 
 .input-wrapper input::placeholder {
-  color: #a2adb7;
+  color: #9badbb;
 }
 
 .input-icon {
-  color: var(--spotter-coral);
+  color: var(--spotter-blue);
 }
 
 .input-suffix {
@@ -2230,12 +2410,20 @@
 
 .plan-button {
   border: 0;
-  background: var(--spotter-coral);
-  color: #ffffff;
   border-radius: 9px;
 
+  background:
+    linear-gradient(
+      110deg,
+      #3979a8 0%,
+      #4f92bb 50%,
+      #4fa9aa 100%
+    );
+
+  color: #ffffff;
+
   box-shadow:
-    0 4px 12px rgba(255, 107, 95, 0.20);
+    0 5px 15px rgba(56, 121, 168, 0.22);
 
   transition:
     background 0.2s ease,
@@ -2244,11 +2432,18 @@
 }
 
 .plan-button:hover {
-  background: var(--spotter-coral-dark);
+  background:
+    linear-gradient(
+      110deg,
+      #326d99 0%,
+      #4385ad 50%,
+      #439898 100%
+    );
+
   transform: translateY(-2px);
 
   box-shadow:
-    0 7px 18px rgba(255, 107, 95, 0.25);
+    0 8px 21px rgba(56, 121, 168, 0.27);
 }
 
 .plan-button:active {
@@ -2281,7 +2476,13 @@
 }
 
 .stat-icon {
-  background: #f2f6f8;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fa,
+      #e2f2f3
+    );
+
   color: var(--spotter-teal);
 }
 
@@ -2295,30 +2496,57 @@
 
 
 /* =========================================================
-   RESULTS
+   SECTION HEADINGS
    ========================================================= */
 
-.results-section,
-.hos-section {
-  margin-top: 32px;
-}
-
-.section-heading h2 {
+.section-heading h2,
+.route-section-header h2,
+.hos-summary-top strong,
+.timeline-header h3,
+.timeline-main strong,
+.empty-state h2,
+.eld-empty h2,
+.eld-page-header h2,
+.eld-day-header h3 {
   color: var(--spotter-text);
 }
 
-.section-heading > div > p:last-child {
+.section-heading > div > p:last-child,
+.route-section-header p:last-child,
+.hos-summary-top small,
+.hos-summary-top span,
+.timeline-header p,
+.timeline-main p,
+.eld-page-header p:last-child {
   color: var(--spotter-text-secondary);
 }
 
 
-/* Success badges */
+/* =========================================================
+   SUCCESS STATES
+   ========================================================= */
 
 .planned-badge,
-.hos-compliance {
-  border-color: #bce9dc;
-  background: #effaf7;
-  color: #087f73;
+.hos-compliance,
+.route-status,
+.eld-status,
+.eld-header-badge,
+.eld-sheet-status {
+  border: 1px solid #bfe2df;
+
+  background:
+    linear-gradient(
+      100deg,
+      #eef9f8,
+      #edf7fb
+    );
+
+  color: #317d82;
+}
+
+.route-status span,
+.eld-status span {
+  background: #49bfa7;
 }
 
 
@@ -2338,7 +2566,13 @@
 }
 
 .metric-icon {
-  background: #f1f6f8;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fa,
+      #e2f2f3
+    );
+
   color: var(--spotter-teal);
 }
 
@@ -2350,28 +2584,8 @@
   color: var(--spotter-text);
 }
 
-
-/* =========================================================
-   ROUTE
-   ========================================================= */
-
-.route-section {
-  border-color: var(--spotter-border);
-  background: #ffffff;
-  box-shadow: var(--spotter-shadow);
-}
-
-.route-section-header h2 {
-  color: var(--spotter-text);
-}
-
-.route-section-header p:last-child {
+.metric-card strong span {
   color: var(--spotter-text-secondary);
-}
-
-.route-status {
-  background: #effaf7;
-  color: #087f73;
 }
 
 
@@ -2379,24 +2593,13 @@
    HOS
    ========================================================= */
 
-.hos-summary-card,
-.timeline-card {
-  border-color: var(--spotter-border);
-  background: #ffffff;
-  box-shadow: var(--spotter-shadow);
-}
-
-.hos-summary-top strong {
-  color: var(--spotter-text);
-}
-
-.hos-summary-top small,
-.hos-summary-top span {
-  color: var(--spotter-text-secondary);
-}
-
 .cycle-circle {
-  background: #f1f6f8;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fa,
+      #e2f2f3
+    );
 }
 
 .cycle-circle span {
@@ -2404,15 +2607,20 @@
 }
 
 .cycle-bar {
-  background: #edf1f3;
+  background: #e8f0f3;
 }
 
 .cycle-bar span {
-  background: var(--spotter-teal);
+  background:
+    linear-gradient(
+      90deg,
+      var(--spotter-blue),
+      var(--spotter-teal)
+    );
 }
 
 .hos-mini-stats {
-  border-top-color: #edf0f2;
+  border-top-color: #e8eef2;
 }
 
 .hos-mini-stats small {
@@ -2429,32 +2637,22 @@
    ========================================================= */
 
 .timeline-header {
-  border-bottom-color: #edf0f2;
-}
-
-.timeline-header h3 {
-  color: var(--spotter-text);
-}
-
-.timeline-header p {
-  color: var(--spotter-text-secondary);
+  border-bottom-color: #e8eef2;
 }
 
 .timeline-item:not(:last-child)::after {
-  background: #e2e7eb;
+  background: #dfe8ed;
 }
 
 .timeline-marker {
-  background: #f1f6f8;
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fa,
+      #e2f2f3
+    );
+
   color: var(--spotter-teal);
-}
-
-.timeline-main strong {
-  color: var(--spotter-text);
-}
-
-.timeline-main p {
-  color: var(--spotter-text-secondary);
 }
 
 .timeline-duration {
@@ -2462,22 +2660,7 @@
 }
 
 .timeline-meta {
-  color: #97a2ac;
-}
-
-
-/* =========================================================
-   ERROR
-   ========================================================= */
-
-.error-card {
-  border-color: #f3c5c2;
-  background: #fff5f4;
-  color: #b5473e;
-}
-
-.error-card > span {
-  background: #ffe3e0;
+  color: #8fa0ad;
 }
 
 
@@ -2487,20 +2670,19 @@
 
 .empty-state,
 .eld-empty {
-  border-color: var(--spotter-border);
-  background: #ffffff;
   box-shadow: var(--spotter-shadow);
 }
 
 .empty-state-icon,
 .eld-empty-icon {
-  background: #f1f6f8;
-  color: var(--spotter-teal);
-}
+  background:
+    linear-gradient(
+      135deg,
+      #edf7fa,
+      #e2f2f3
+    );
 
-.empty-state h2,
-.eld-empty h2 {
-  color: var(--spotter-text);
+  color: var(--spotter-teal);
 }
 
 .empty-state p:not(.eyebrow),
@@ -2510,19 +2692,226 @@
 
 
 /* =========================================================
-   ELD
+   MAP MARKER
    ========================================================= */
 
-.eld-status,
-.eld-header-badge,
-.eld-sheet-status {
-  border-color: #bce9dc;
-  background: #effaf7;
-  color: #087f73;
+.custom-map-marker {
+  background: transparent !important;
+  border: none !important;
 }
 
-.eld-status span {
-  background: #25b889;
+.map-marker-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--spotter-blue),
+      var(--spotter-teal)
+    );
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  box-shadow:
+    0 3px 10px rgba(18, 55, 82, 0.25);
+}
+
+.map-marker-icon span {
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ELD LOGBOOK
+   Keep semantic status colors distinct.
+   ========================================================= */
+
+.off-duty-label {
+  color: #b7791f;
+}
+
+.sleeper-label {
+  color: #3578b5;
+}
+
+.driving-label {
+  color: #c94b55;
+}
+
+.on-duty-label {
+  color: #27966a;
+}
+
+.log-off-duty {
+  background: #e5a33a;
+}
+
+.log-sleeper {
+  background: #4f8fbe;
+}
+
+.log-driving {
+  background: #d85a63;
+}
+
+.log-on-duty {
+  background: #43aa7a;
+}
+
+.off-duty-dot {
+  background: #e5a33a;
+}
+
+.sleeper-dot {
+  background: #4f8fbe;
+}
+
+.driving-dot {
+  background: #d85a63;
+}
+
+.on-duty-dot {
+  background: #43aa7a;
+}
+
+
+/* =========================================================
+   ELD DAY TABS
+   ========================================================= */
+
+.eld-day-tab {
+  border-color: #d7e2e8;
+  background: #f7fafc;
+  color: #668096;
+}
+
+.eld-day-tab:hover {
+  border-color: #a9c1cf;
+  background: #edf5f8;
+  color: var(--spotter-text-blue);
+}
+
+.eld-day-tab.active {
+  border-color: transparent;
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--spotter-blue),
+      var(--spotter-teal)
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(79, 143, 190, 0.18);
+}
+
+.eld-day-tab:focus-visible {
+  outline: 3px solid rgba(79, 143, 190, 0.16);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   ELD REMARKS / RECAP
+   ========================================================= */
+
+.remarks-header h3,
+.eld-recap-header h3,
+.recap-card > strong,
+.remark-item > div span {
+  color: var(--spotter-text);
+}
+
+.remarks-header > span {
+  border-color: #dce6ed;
+  background: #f6f9fb;
+  color: #6d8497;
+}
+
+.remark-item > strong {
+  color: #5c7488;
+}
+
+.remark-item > div small,
+.empty-remarks {
+  color: #91a0ac;
+}
+
+.eld-recap {
+  background: #f8fbfc;
+  border-color: #dfe8ed;
+}
+
+.recap-card {
+  border-color: #dfe8ed;
+}
+
+.recap-card > small:first-child,
+.day-total small,
+.eld-info-item small,
+.eld-totals small {
+  color: #7c92a3;
+}
+
+.recap-card > span {
+  color: #91a0ac;
+}
+
+.recap-bar {
+  background: #e7eef2;
+}
+
+.recap-bar span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--spotter-blue),
+      var(--spotter-teal)
+    );
+}
+
+
+/* =========================================================
+   ELD INFORMATION
+   ========================================================= */
+
+.eld-info-card,
+.eld-day-card {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+}
+
+.eld-info-item {
+  border-right-color: #e8eef2;
+}
+
+.eld-info-item strong {
+  color: var(--spotter-text);
+}
+
+.eld-day-header {
+  border-bottom-color: #e8eef2;
+}
+
+.eld-legend {
+  border-bottom-color: #e8eef2;
+  color: #688196;
 }
 
 
@@ -2534,6 +2923,10 @@
   .main-content {
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  .recap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -2554,5 +2947,14 @@
 
   .welcome-section h2 {
     font-size: 26px;
+  }
+
+  .recap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section::before,
+  .welcome-section::after {
+    display: none;
   }
 }
