@@ -157,7 +157,10 @@ function App() {
 
           <div className="brand">
             <div className="brand-mark">
-              S
+               <img
+                       src="/spotter-logo.png"
+                       alt="Spotter"
+               />
             </div>
 
             <span>SPOTTER</span>
@@ -425,7 +428,7 @@ function App() {
                     <div className="input-wrapper">
 
                       <span className="input-icon">
-                        ●
+
                       </span>
 
                       <input
