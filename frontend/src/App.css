@@ -1978,3 +1978,581 @@
 
   display: block;
 }
+
+/* =========================================================
+   SPOTTER VISUAL REDESIGN — STEP 1
+   Safe override layer
+   ========================================================= */
+
+:root {
+  --spotter-navy: #101820;
+  --spotter-navy-light: #18232d;
+  --spotter-coral: #ff6b5f;
+  --spotter-coral-dark: #e95a50;
+  --spotter-teal: #00a6a6;
+  --spotter-blue: #5b8def;
+
+  --spotter-bg: #f7f9fb;
+  --spotter-card: #ffffff;
+
+  --spotter-text: #17212a;
+  --spotter-text-secondary: #64717d;
+  --spotter-text-muted: #8b97a2;
+
+  --spotter-border: #e3e8ed;
+
+  --spotter-shadow:
+    0 4px 18px rgba(16, 24, 32, 0.05);
+
+  --spotter-shadow-hover:
+    0 10px 28px rgba(16, 24, 32, 0.09);
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.app {
+  background: var(--spotter-bg);
+  color: var(--spotter-text);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 250px;
+  background: var(--spotter-navy);
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+
+/* Brand */
+
+.brand {
+  color: #ffffff;
+}
+
+.brand-mark {
+  background: var(--spotter-coral);
+  color: #ffffff;
+  border-radius: 9px;
+}
+
+
+/* Navigation */
+
+.nav-item {
+  color: #98a5b1;
+  border-radius: 10px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.nav-item.active {
+  background: rgba(255, 107, 95, 0.14);
+  color: #ffffff;
+}
+
+.nav-item.active span {
+  color: var(--spotter-coral);
+}
+
+
+/* Driver card */
+
+.driver-card {
+  border-top-color: rgba(255, 255, 255, 0.09);
+}
+
+.avatar {
+  background: #e9eef2;
+  color: var(--spotter-navy);
+}
+
+.online-dot {
+  background: #39c979;
+  box-shadow: 0 0 0 3px rgba(57, 201, 121, 0.12);
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.main-content {
+  background: var(--spotter-bg);
+}
+
+
+/* Topbar */
+
+.topbar {
+  border-bottom-color: var(--spotter-border);
+}
+
+.eyebrow {
+  color: var(--spotter-text-muted);
+}
+
+.topbar h1 {
+  color: var(--spotter-text);
+}
+
+.status-pill {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  color: var(--spotter-text-secondary);
+  box-shadow: 0 2px 8px rgba(16, 24, 32, 0.03);
+}
+
+.status-pill span {
+  background: #39c979;
+  box-shadow: 0 0 0 3px rgba(57, 201, 121, 0.12);
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome-section h2 {
+  color: var(--spotter-text);
+}
+
+.welcome-section p {
+  color: var(--spotter-text-secondary);
+}
+
+
+/* =========================================================
+   PLANNER
+   ========================================================= */
+
+.planner-card {
+  border-color: var(--spotter-border);
+  background: var(--spotter-card);
+  box-shadow: var(--spotter-shadow);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.planner-card:hover {
+  box-shadow: var(--spotter-shadow-hover);
+}
+
+.card-header {
+  border-bottom-color: #edf0f3;
+}
+
+.card-header h3 {
+  color: var(--spotter-text);
+}
+
+.card-header p {
+  color: var(--spotter-text-muted);
+}
+
+
+/* Step indicator */
+
+.step-indicator > span:not(.step-line) {
+  border-color: #d9e0e5;
+  color: #9aa5ae;
+}
+
+.step-indicator .step-active {
+  background: var(--spotter-coral);
+  border-color: var(--spotter-coral);
+  color: #ffffff !important;
+}
+
+.step-line {
+  background: #dce2e6;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.input-group label {
+  color: #46535e;
+}
+
+.input-wrapper input {
+  border-color: #d9e1e7;
+  background: #fbfcfd;
+  color: var(--spotter-text);
+  border-radius: 9px;
+}
+
+.input-wrapper input:hover {
+  border-color: #c5cfd7;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--spotter-coral);
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(255, 107, 95, 0.10);
+}
+
+.input-wrapper input::placeholder {
+  color: #a2adb7;
+}
+
+.input-icon {
+  color: var(--spotter-coral);
+}
+
+.input-suffix {
+  color: var(--spotter-text-muted);
+}
+
+
+/* =========================================================
+   PLAN BUTTON
+   ========================================================= */
+
+.plan-button {
+  border: 0;
+  background: var(--spotter-coral);
+  color: #ffffff;
+  border-radius: 9px;
+
+  box-shadow:
+    0 4px 12px rgba(255, 107, 95, 0.20);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.plan-button:hover {
+  background: var(--spotter-coral-dark);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(255, 107, 95, 0.25);
+}
+
+.plan-button:active {
+  transform: translateY(0);
+}
+
+.plan-button:disabled {
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   QUICK STATS
+   ========================================================= */
+
+.stat-card {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--spotter-shadow-hover);
+}
+
+.stat-icon {
+  background: #f2f6f8;
+  color: var(--spotter-teal);
+}
+
+.stat-card small {
+  color: var(--spotter-text-muted);
+}
+
+.stat-card strong {
+  color: var(--spotter-text);
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results-section,
+.hos-section {
+  margin-top: 32px;
+}
+
+.section-heading h2 {
+  color: var(--spotter-text);
+}
+
+.section-heading > div > p:last-child {
+  color: var(--spotter-text-secondary);
+}
+
+
+/* Success badges */
+
+.planned-badge,
+.hos-compliance {
+  border-color: #bce9dc;
+  background: #effaf7;
+  color: #087f73;
+}
+
+
+/* =========================================================
+   METRIC CARDS
+   ========================================================= */
+
+.metric-card {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--spotter-shadow-hover);
+}
+
+.metric-icon {
+  background: #f1f6f8;
+  color: var(--spotter-teal);
+}
+
+.metric-card small {
+  color: var(--spotter-text-muted);
+}
+
+.metric-card strong {
+  color: var(--spotter-text);
+}
+
+
+/* =========================================================
+   ROUTE
+   ========================================================= */
+
+.route-section {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+}
+
+.route-section-header h2 {
+  color: var(--spotter-text);
+}
+
+.route-section-header p:last-child {
+  color: var(--spotter-text-secondary);
+}
+
+.route-status {
+  background: #effaf7;
+  color: #087f73;
+}
+
+
+/* =========================================================
+   HOS
+   ========================================================= */
+
+.hos-summary-card,
+.timeline-card {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+}
+
+.hos-summary-top strong {
+  color: var(--spotter-text);
+}
+
+.hos-summary-top small,
+.hos-summary-top span {
+  color: var(--spotter-text-secondary);
+}
+
+.cycle-circle {
+  background: #f1f6f8;
+}
+
+.cycle-circle span {
+  color: var(--spotter-teal);
+}
+
+.cycle-bar {
+  background: #edf1f3;
+}
+
+.cycle-bar span {
+  background: var(--spotter-teal);
+}
+
+.hos-mini-stats {
+  border-top-color: #edf0f2;
+}
+
+.hos-mini-stats small {
+  color: var(--spotter-text-muted);
+}
+
+.hos-mini-stats strong {
+  color: var(--spotter-text);
+}
+
+
+/* =========================================================
+   HOS TIMELINE
+   ========================================================= */
+
+.timeline-header {
+  border-bottom-color: #edf0f2;
+}
+
+.timeline-header h3 {
+  color: var(--spotter-text);
+}
+
+.timeline-header p {
+  color: var(--spotter-text-secondary);
+}
+
+.timeline-item:not(:last-child)::after {
+  background: #e2e7eb;
+}
+
+.timeline-marker {
+  background: #f1f6f8;
+  color: var(--spotter-teal);
+}
+
+.timeline-main strong {
+  color: var(--spotter-text);
+}
+
+.timeline-main p {
+  color: var(--spotter-text-secondary);
+}
+
+.timeline-duration {
+  color: var(--spotter-text);
+}
+
+.timeline-meta {
+  color: #97a2ac;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-card {
+  border-color: #f3c5c2;
+  background: #fff5f4;
+  color: #b5473e;
+}
+
+.error-card > span {
+  background: #ffe3e0;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.empty-state,
+.eld-empty {
+  border-color: var(--spotter-border);
+  background: #ffffff;
+  box-shadow: var(--spotter-shadow);
+}
+
+.empty-state-icon,
+.eld-empty-icon {
+  background: #f1f6f8;
+  color: var(--spotter-teal);
+}
+
+.empty-state h2,
+.eld-empty h2 {
+  color: var(--spotter-text);
+}
+
+.empty-state p:not(.eyebrow),
+.eld-empty p:last-child {
+  color: var(--spotter-text-secondary);
+}
+
+
+/* =========================================================
+   ELD
+   ========================================================= */
+
+.eld-status,
+.eld-header-badge,
+.eld-sheet-status {
+  border-color: #bce9dc;
+  background: #effaf7;
+  color: #087f73;
+}
+
+.eld-status span {
+  background: #25b889;
+}
+
+
+/* =========================================================
+   RESPONSIVE POLISH
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .main-content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .planner-card,
+  .route-section,
+  .hos-summary-card,
+  .timeline-card,
+  .empty-state,
+  .eld-empty {
+    border-radius: 14px;
+  }
+
+  .welcome-section h2 {
+    font-size: 26px;
+  }
+}
